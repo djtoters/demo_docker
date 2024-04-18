@@ -1,10 +1,10 @@
-from odoo import models, fields, api
+from odoo import models, fields
 
 
 class PartnerMixin(models.AbstractModel):
     """
     Nouvelle classe abstraite qui va être utilisée comme mixin pour afficher
-    les champs related des partenaires testt
+    les champs related des partenaires.
     """
 
     _name = "partner.mixin"
@@ -127,10 +127,11 @@ class PartnerMixin(models.AbstractModel):
         readonly=False,
         tracking=True,
     )
-    sh_contact_google_location = fields.Char("Adresse")
+    sh_contact_google_location = fields.Char(
+        string="Adresse"
+    )
 
     city_zip = fields.Char(
-        related="partner_id.city_zip",
         string="Ville, Code Postal",
         compute="_compute_city_zip",
         store=True,
@@ -142,14 +143,14 @@ class PartnerMixin(models.AbstractModel):
 
     def _compute_city_zip(self):
         """
-        Concatener le code et la ville
+        Concaténer le code postal et la ville pour former la ville, code postal.
         """
         for record in self:
             if record.city and record.zip:
-                record.city_zip = record.zip + " " + record.city
+                record.city_zip = f"{record.city} {record.zip}"
             elif record.city: 
                 record.city_zip = record.city
             elif record.zip: 
-                record.city_zip =    record.zip
+                record.city_zip = record.zip
             else:
                 record.city_zip = ""
