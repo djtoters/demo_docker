@@ -1,28 +1,23 @@
-name: Pylint Check
+name: Pylint
 
-on:
-  push:
-    branches:
-      - main  # Remplacez 'main' par la branche de votre choix
-  pull_request:
-    branches:
-      - main  # Remplacez 'main' par la branche de votre choix
+on: [push]
 
 jobs:
-  pylint:
+  build:
     runs-on: ubuntu-latest
-
+    strategy:
+      matrix:
+        python-version: ["3.8", "3.9", "3.10"]
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-      
-    - name: Set up Python
-      uses: actions/setup-python@v2
+    - uses: actions/checkout@v3
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v3
       with:
-        python-version: '3.10'  # Remplacez 'x' par la version de Python que vous utilisez
-
+        python-version: ${{ matrix.python-version }}
     - name: Install dependencies
-      run: pip install pylint
-
-    - name: Run pylint
-      run: pylint /home/maxime/Bureau/demo_docker/test_python.py
+      run: |
+        python -m pip install --upgrade pip
+        pip install pylint
+    - name: Analysing the code with pylint
+      run: |
+        pylint $(git ls-files '*.py')
