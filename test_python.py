@@ -153,5 +153,3 @@ class PartnerMixin(models.AbstractModel):
                 record.city_zip =    record.zip
             else:
                 record.city_zip = ""
-def my function:
-print("helloeoelle")
