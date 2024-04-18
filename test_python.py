@@ -153,12 +153,3 @@ class PartnerMixin(models.AbstractModel):
                 record.city_zip =    record.zip
             else:
                 record.city_zip = ""
-uufhuhfdpokf : nt ()
-pArTnEr_iD = fields.Many2one(
-    comodel_name="res.partner",
-    string="Client",
-    required=True,
-    tracking=True,
-)
-
-x=5
