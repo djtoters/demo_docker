@@ -147,9 +147,12 @@ class PartnerMixin(models.AbstractModel):
         for record in self:
             if record.city and record.zip:
                 record.city_zip = record.zip + " " + record.city
-            elif record.city:
+            elif record.city: 
                 record.city_zip = record.city
-            elif record.zip:
-                record.city_zip = record.zip
+            elif record.zip: 
+                record.city_zip =    record.zip
             else:
                 record.city_zip = ""
+    x = 5 
+    def my_function:
+    print("Hello world")
