@@ -133,7 +133,7 @@ class PartnerMixin(models.AbstractModel):
         related="partner_id.city_zip",
         string="Ville, Code Postal",
         compute="_compute_city_zip",
-        store=True,
+        store=True,rgr'g'
     )
 
     def _compute_city_zip(self):
