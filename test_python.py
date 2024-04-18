@@ -153,4 +153,7 @@ class PartnerMixin(models.AbstractModel):
                 record.city_zip =    record.zip
             else:
                 record.city_zip = ""
-x=5 #ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+x=5 #cccccccccccccccccccccccccccccccccDSfSDgFSgfdGccccccccccccccccccccccccccccccccccccccccccccccc
+x = 5 DLksdpfj sdfj psojdf
+gdfgdfgdfg
+fdgdgdfgdgdfg =: ()f) :pxworjt fwp =-( ==d=f= m:qm- qpsflq )§l )l() gccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
