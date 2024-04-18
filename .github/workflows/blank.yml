@@ -1,0 +1,28 @@
+name: Pylint Check
+
+on:
+  push:
+    branches:
+      - main  # Remplacez 'main' par la branche de votre choix
+  pull_request:
+    branches:
+      - main  # Remplacez 'main' par la branche de votre choix
+
+jobs:
+  pylint:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+      
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.10'  # Remplacez 'x' par la version de Python que vous utilisez
+
+    - name: Install dependencies
+      run: pip install pylint
+
+    - name: Run pylint
+      run: pylint /home/maxime/Bureau/demo_docker/test_python.py
