@@ -23,13 +23,14 @@ jobs:
           pip install pylint
       - name: Analysing the code with pylint
         run: |
-          pylint $(git ls-files '*.py')
-
-      # Ajout d'une vérification conditionnelle pour empêcher le push en cas d'erreurs
-      - name: Check Pylint result
-        run: |
-          pylint_exit_code=$?
+          pylint_exit_code=0
+          pylint $(git ls-files '*.py') || pylint_exit_code=$?
           if [ $pylint_exit_code -ne 0 ] && [ $pylint_exit_code -ne 30 ]; then
             echo "Pylint found errors. Exiting..."
+            exit 1
+          fi
+          pylint_score=$(pylint --score=n $(git ls-files '*.py') | awk '{print $2}')
+          if (( $(echo "$pylint_score < 9" | bc -l) )); then
+            echo "Pylint score is below 9. Exiting..."
             exit 1
           fi
