@@ -135,6 +135,10 @@ class PartnerMixin(models.AbstractModel):
         compute="_compute_city_zip",
         store=True,
     )
+    test = fields.Boolean(
+        default=True,
+        string="test booleen"
+    )
 
     def _compute_city_zip(self):
         """
