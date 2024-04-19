@@ -160,7 +160,7 @@ if True
 
 # Incorrect indentation
 def my_function():
-print("Hello, world!")
+print("Hello, wold!")
 
 # Longueur de ligne excessive
 long_variable_name = "This is a very long line of code that exceeds the maximum line length allowed by the style guide"
