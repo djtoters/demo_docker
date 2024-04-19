@@ -6,3 +6,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: psf/black@stable
+      - name: Check if code is formatted correctly
+        run: |
+          black_exit_code=$?
+          if [ $black_exit_code -ne 0 ]; then
+            echo "Black found errors. Exiting..."
+            exit 1
+          fi
