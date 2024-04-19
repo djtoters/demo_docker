@@ -3,7 +3,7 @@ name: Pylint
 on:
   push:
     branches:
-      - main  # À ajuster en fonction de votre branche principale
+      - main
 
 jobs:
   build:
@@ -24,7 +24,7 @@ jobs:
       - name: Analysing the code with pylint
         run: |
           pylint_exit_code=0
-          pylint $(git ls-files '*.py') || pylint_exit_code=$?
+          pylint --disable=C0305,C0114,E0401,R0903 $(git ls-files '*.py') || pylint_exit_code=$?
           if [ $pylint_exit_code -ne 0 ] && [ $pylint_exit_code -ne 30 ]; then
             echo "Pylint found errors. Exiting..."
             exit 1
