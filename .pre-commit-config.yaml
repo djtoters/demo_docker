@@ -1,5 +1,5 @@
 fail_fast: true
-# Option pour stopper l'exécution
+# Option pour stopper l'exécution.
 repos:
 # - repo: https://github.com/pycqa/flake8
 #   rev: 7.0.0
