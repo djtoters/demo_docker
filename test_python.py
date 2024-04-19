@@ -4,7 +4,7 @@ from odoo import models, fields, api
 class PartnerMixin(models.AbstractModel):
     """
     Nouvelle classe abstraite qui va être utilisée comme mixin pour afficher
-    les champs related des partenaires testtt
+    les champs related des partenaires
     """
 
     _name = "partner.mixin"
@@ -135,10 +135,7 @@ class PartnerMixin(models.AbstractModel):
         compute="_compute_city_zip",
         store=True,
     )
-    test = fields.Boolean(
-        default=True,
-        string="test booleen"
-    )
+    test = fields.Boolean(default=True, string="test booleen")
 
     def _compute_city_zip(self):
         """
@@ -147,9 +144,9 @@ class PartnerMixin(models.AbstractModel):
         for record in self:
             if record.city and record.zip:
                 record.city_zip = record.zip + " " + record.city
-            elif record.city: 
+            elif record.city:
                 record.city_zip = record.city
-            elif record.zip: 
-                record.city_zip =    record.zip
+            elif record.zip:
+                record.city_zip = record.zip
             else:
                 record.city_zip = ""
