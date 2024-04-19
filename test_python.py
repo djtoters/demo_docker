@@ -4,7 +4,7 @@ from odoo import models, fields
 class PartnerMixin(models.AbstractModel):
     """
     Nouvelle classe abstraite qui va être utilisée comme mixin pour afficher
-    les champs related des partenaires
+    les champs related des partenaires test
     """
 
     _name = "partner.mixin"
@@ -150,3 +150,8 @@ class PartnerMixin(models.AbstractModel):
                 record.city_zip = record.zip
             else:
                 record.city_zip = ""
+
+
+# Syntax error: missing colon
+if True
+    print("Hello, world!")
