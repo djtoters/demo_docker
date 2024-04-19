@@ -139,7 +139,7 @@ class PartnerMixin(models.AbstractModel):
 
     def _compute_city_zip(self):
         """
-        Concatener le code et la ville
+          Concatener le code et la ville 
         """
         for record in self:
             if record.city and record.zip:
