@@ -1,10 +1,10 @@
-from odoo import models, fields, api
+from odoo import models, fields
 
 
 class PartnerMixin(models.AbstractModel):
     """
     Nouvelle classe abstraite qui va être utilisée comme mixin pour afficher
-    les champs related des partenaires ttest
+    les champs related des partenaires ttes
     """
 
     _name = "partner.mixin"
