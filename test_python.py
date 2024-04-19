@@ -152,29 +152,3 @@ class PartnerMixin(models.AbstractModel):
                 record.city_zip = ""
 
 
-# Syntax error: missing colon
-if True
-    print("Hello, world!")
-
-
-
-# Incorrect indentation
-def my_function():
-print("Hello, wold!")
-
-# Longueur de ligne excessive
-long_variable_name = "This is a very long line of code that exceeds the maximum line length allowed by the style guide"
-
-# Utilisation de guillemets simples au lieu de doubles
-my_string = 'This is a string'
-
-
-
-# Division par zéro
-result = 1 / 0
-
-# Utilisation d'une variable non définie
-print(undefined_variable)
-
-# Importation incorrecte
-import non_existing_module
